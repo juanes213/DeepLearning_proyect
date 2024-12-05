@@ -1,0 +1,2118 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; Proyecto Final Deep Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'uninorte-flower-detection-part-1-pytorch';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Pytorch Models" href="uninorte-flower-detection-pytorch.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Proyecto Final Deep Learning - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Proyecto Final Deep Learning - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to the final proyect for the class of Deep Learning.
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="bird-species-recognition-using-efficientnet.html">EFFICIENT NET</a></li>
+
+
+
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="bird_image_web_scraper.html">WEB SCAPPING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pre-processing.html">Birds species detection using TensorFlow Object Detection API</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="Training.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tensorboard.html">Tensorboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Inference.html">Inference</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="uninorte-flower-detection-pytorch.html">Pytorch Models</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Funinorte-flower-detection-part-1-pytorch.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/uninorte-flower-detection-part-1-pytorch.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="kn">import</span> <span class="n">tqdm</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+
+
+<span class="n">carpetas_path</span> <span class="o">=</span> <span class="s2">&quot;/kaggle/input/flores-uninorte&quot;</span>
+
+<span class="n">datos_aves</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">carpeta</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">carpetas_path</span><span class="p">):</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">carpetas_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">carpeta</span><span class="si">}</span><span class="s2">/&quot;</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">carpetas_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">carpeta</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">element</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">datos_aves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        
+<span class="n">df_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">datos_aves</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">--------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                        </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">carpetas_path</span> <span class="o">=</span> <span class="s2">&quot;/kaggle/input/flores-uninorte&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="n">datos_aves</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">---&gt; </span><span class="mi">17</span> <span class="k">for</span> <span class="n">carpeta</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">carpetas_path</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">carpetas_path</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">carpeta</span><span class="si">}</span><span class="s2">/&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+
+<span class="ne">FileNotFoundError</span>: [WinError 3] El sistema no puede encontrar la ruta especificada: &#39;/kaggle/input/flores-uninorte&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_final</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">df_final</span><span class="p">[(</span><span class="n">df_final</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Bougainvillea glabra&quot;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df_final</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Bougainvillea spectabilis&quot;</span><span class="p">)]</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Bougainvillea&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">img_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(375, 500, 3)
+</pre></div>
+</div>
+<img alt="_images/27d11a98bdead68ce076a064d21dfcffafaf294d7e8ef60a39a38d676d733be3.png" src="_images/27d11a98bdead68ce076a064d21dfcffafaf294d7e8ef60a39a38d676d733be3.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">df_final</span><span class="p">[[</span><span class="s2">&quot;image_url&quot;</span><span class="p">,</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Crear la grilla de 5x2</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Iterar sobre las primeras 10 imágenes</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">flatten</span><span class="p">()):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="n">img_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_array</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>  <span class="c1"># Ocultar los ejes</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/2140ab36223968bd7a8bcb742a1d554954836a572baf376b4fb09ccda77588db.png" src="_images/2140ab36223968bd7a8bcb742a1d554954836a572baf376b4fb09ccda77588db.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Bougainvillea&#39;, &#39;Plumeria alba&#39;, &#39;Tabebuia rosea&#39;,
+       &#39;Handroanthus chrysanthus&#39;, &#39;Delonix regia&#39;], dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+
+<span class="c1"># Cargar la imagen de la flor específica (la plantilla)</span>
+<span class="n">template_url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Coloca la URL de la imagen que sirve como template</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">template_url</span><span class="p">)</span>
+<span class="n">template_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">template_img</span><span class="p">)</span>
+
+<span class="c1"># Cargar la imagen donde buscar las flores</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]:</span>  <span class="c1"># Ajusta el nombre de la especie</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Cargar la imagen</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+        
+        <span class="c1"># Convertir ambas imágenes a escala de grises</span>
+        <span class="n">gray_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        <span class="n">gray_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        
+        <span class="c1"># Mostrar las imágenes cargadas</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Imagen de Template&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Imagen a buscar&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error cargando la imagen: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8cd526078352201f94a9183a29357a6e7fca7befed6cf31d6edb34d3764d0a6c.png" src="_images/8cd526078352201f94a9183a29357a6e7fca7befed6cf31d6edb34d3764d0a6c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Usar matchTemplate para buscar la coincidencia de la plantilla en la imagen</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">matchTemplate</span><span class="p">(</span><span class="n">gray_image</span><span class="p">,</span> <span class="n">gray_template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">TM_CCOEFF_NORMED</span><span class="p">)</span>
+
+<span class="c1"># Definir un umbral para considerar las coincidencias</span>
+<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.7</span>  <span class="c1"># Ajusta este valor si es necesario</span>
+<span class="n">loc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">result</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span>
+
+<span class="c1"># Dibujar rectángulos alrededor de las coincidencias encontradas</span>
+<span class="k">for</span> <span class="n">pt</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">loc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">gray_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">gray_template</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Mostrar la imagen con las coincidencias</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coincidencias encontradas con Template Matching&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0f700e7c5553aa6fe5a98732c64593e74dc15f2299fe9598d45f2e8f135e9184.png" src="_images/0f700e7c5553aa6fe5a98732c64593e74dc15f2299fe9598d45f2e8f135e9184.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;Annotations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # Definir proporción de entrenamiento y validación</span>
+<span class="c1"># train_ratio = 0.8</span>
+
+<span class="c1"># # Función para procesar imágenes y guardar las anotaciones en formato YOLO</span>
+<span class="c1"># def coor_detection_yolo(idx, flower_type=&quot;Plumeria alba&quot;, class_id=0, min_area=500, epsilon=10, output_image_folder=&quot;train/images/&quot;, output_label_folder=&quot;train/labels/&quot;):</span>
+<span class="c1">#     try:</span>
+<span class="c1">#         # Asegurar que los directorios de salida existen</span>
+<span class="c1">#         if not os.path.exists(output_image_folder):</span>
+<span class="c1">#             os.makedirs(output_image_folder)</span>
+<span class="c1">#         if not os.path.exists(output_label_folder):</span>
+<span class="c1">#             os.makedirs(output_label_folder)</span>
+
+<span class="c1">#         # Cargar la imagen desde la URL</span>
+<span class="c1">#         url = data[&quot;image_url&quot;][idx]</span>
+<span class="c1">#         response = requests.get(url)</span>
+<span class="c1">#         img = Image.open(BytesIO(response.content))</span>
+<span class="c1">#         image = np.array(img)</span>
+
+<span class="c1">#         # Asegurar que la imagen esté en formato RGB</span>
+<span class="c1">#         image_rgb = cv2.cvtColor(image, cv2.COLOR_RGBA2RGB) if image.shape[2] == 4 else image</span>
+<span class="c1">#         height, width = image_rgb.shape[:2]</span>
+
+<span class="c1">#         # Convertir la imagen de RGB a HSV</span>
+<span class="c1">#         hsv_image = cv2.cvtColor(image_rgb, cv2.COLOR_RGB2HSV)</span>
+
+<span class="c1">#         if flower_type == &quot;Plumeria alba&quot;:</span>
+<span class="c1">#             min_area = 5000</span>
+<span class="c1">#             lower_yellow = np.array([20, 100, 100])</span>
+<span class="c1">#             upper_yellow = np.array([30, 255, 255])</span>
+<span class="c1">#             lower_white = np.array([0, 0, 200])</span>
+<span class="c1">#             upper_white = np.array([180, 30, 255])</span>
+
+<span class="c1">#             mask_yellow = cv2.inRange(hsv_image, lower_yellow, upper_yellow)</span>
+<span class="c1">#             mask_white = cv2.inRange(hsv_image, lower_white, upper_white)</span>
+
+<span class="c1">#             contours_yellow, _ = cv2.findContours(mask_yellow, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span>
+<span class="c1">#             contours_white, _ = cv2.findContours(mask_white, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span>
+
+<span class="c1">#             white_boxes = []</span>
+<span class="c1">#             for contour_white in contours_white:</span>
+<span class="c1">#                 x_w, y_w, w_w, h_w = cv2.boundingRect(contour_white)</span>
+<span class="c1">#                 white_boxes.append([x_w, y_w, x_w + w_w, y_w + h_w])</span>
+
+<span class="c1">#             def merge_boxes(boxes):</span>
+<span class="c1">#                 merged_boxes = []</span>
+<span class="c1">#                 while boxes:</span>
+<span class="c1">#                     box = boxes.pop(0)</span>
+<span class="c1">#                     merged = True</span>
+<span class="c1">#                     while merged:</span>
+<span class="c1">#                         merged = False</span>
+<span class="c1">#                         for i, other_box in enumerate(boxes):</span>
+<span class="c1">#                             if not (box[2] &lt; other_box[0] or box[0] &gt; other_box[2] or</span>
+<span class="c1">#                                     box[3] &lt; other_box[1] or box[1] &gt; other_box[3]):</span>
+<span class="c1">#                                 box = [min(box[0], other_box[0]), min(box[1], other_box[1]),</span>
+<span class="c1">#                                        max(box[2], other_box[2]), max(box[3], other_box[3])]</span>
+<span class="c1">#                                 boxes.pop(i)</span>
+<span class="c1">#                                 merged = True</span>
+<span class="c1">#                                 break</span>
+<span class="c1">#                     merged_boxes.append(box)</span>
+<span class="c1">#                 return merged_boxes</span>
+
+<span class="c1">#             merged_white_boxes = merge_boxes(white_boxes)</span>
+<span class="c1">#             combined_boxes = []</span>
+
+<span class="c1">#             for box in merged_white_boxes:</span>
+<span class="c1">#                 x_w, y_w, x2_w, y2_w = box</span>
+<span class="c1">#                 white_center = np.array([(x_w + x2_w) // 2, (y_w + y2_w) // 2])</span>
+
+<span class="c1">#                 for contour_yellow in contours_yellow:</span>
+<span class="c1">#                     x_y, y_y, w_y, h_y = cv2.boundingRect(contour_yellow)</span>
+<span class="c1">#                     yellow_center = np.array([x_y + w_y // 2, y_y + h_y // 2])</span>
+<span class="c1">#                     distance = np.linalg.norm(white_center - yellow_center)</span>
+
+<span class="c1">#                     if distance &lt; epsilon:</span>
+<span class="c1">#                         x_comb = min(x_w, x_y)</span>
+<span class="c1">#                         y_comb = min(y_w, y_y)</span>
+<span class="c1">#                         w_comb = max(x2_w, x_y + w_y) - x_comb</span>
+<span class="c1">#                         h_comb = max(y2_w, y_y + h_y) - y_comb</span>
+
+<span class="c1">#                         area_combined = w_comb * h_comb</span>
+<span class="c1">#                         if area_combined &gt; min_area:</span>
+<span class="c1">#                             combined_boxes.append([x_comb, y_comb, x_comb + w_comb, y_comb + h_comb])</span>
+
+<span class="c1">#             yolo_annotations = []</span>
+<span class="c1">#             for (x1, y1, x2, y2) in combined_boxes:</span>
+<span class="c1">#                 x_center = (x1 + x2) / 2 / width</span>
+<span class="c1">#                 y_center = (y1 + y2) / 2 / height</span>
+<span class="c1">#                 norm_width = (x2 - x1) / width</span>
+<span class="c1">#                 norm_height = (y2 - y1) / height</span>
+
+<span class="c1">#                 yolo_annotations.append(f&quot;{class_id} {x_center} {y_center} {norm_width} {norm_height}&quot;)</span>
+
+<span class="c1">#         else:</span>
+<span class="c1">#             if flower_type == &quot;Bougainvillea&quot;:</span>
+<span class="c1">#                 lower_color = np.array([130, 50, 50])</span>
+<span class="c1">#                 upper_color = np.array([170, 255, 255])</span>
+<span class="c1">#             elif flower_type == &quot;Tabebuia rosea&quot;:</span>
+<span class="c1">#                 lower_color = np.array([140, 30, 100])</span>
+<span class="c1">#                 upper_color = np.array([170, 255, 255])</span>
+<span class="c1">#             elif flower_type == &quot;Handroanthus chrysanthus&quot;:</span>
+<span class="c1">#                 lower_color = np.array([20, 100, 100])</span>
+<span class="c1">#                 upper_color = np.array([30, 255, 255])</span>
+<span class="c1">#             elif flower_type == &quot;Delonix regia&quot;:</span>
+<span class="c1">#                 lower_color = np.array([0, 100, 100])</span>
+<span class="c1">#                 upper_color = np.array([10, 255, 255])</span>
+
+<span class="c1">#             mask_color = cv2.inRange(hsv_image, lower_color, upper_color)</span>
+<span class="c1">#             contours, _ = cv2.findContours(mask_color, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span>
+
+<span class="c1">#             yolo_annotations = []</span>
+<span class="c1">#             for contour in contours:</span>
+<span class="c1">#                 x, y, w, h = cv2.boundingRect(contour)</span>
+<span class="c1">#                 area = w * h</span>
+<span class="c1">#                 if area &gt; min_area:</span>
+<span class="c1">#                     x_center = (x + w / 2) / width</span>
+<span class="c1">#                     y_center = (y + h / 2) / height</span>
+<span class="c1">#                     norm_width = w / width</span>
+<span class="c1">#                     norm_height = h / height</span>
+
+<span class="c1">#                     yolo_annotations.append(f&quot;{class_id} {x_center} {y_center} {norm_width} {norm_height}&quot;)</span>
+
+<span class="c1">#         # Guardar la imagen y anotaciones</span>
+<span class="c1">#         if len(yolo_annotations) == 0:</span>
+<span class="c1">#             data.iloc[idx, data.columns.get_loc(&#39;Annotations&#39;)] = &quot;No tiene&quot;</span>
+<span class="c1">#         else:</span>
+<span class="c1">#             image_filename = f&quot;{flower_type}_{idx}.jpg&quot;</span>
+<span class="c1">#             txt_filename = f&quot;{flower_type}_{idx}.txt&quot;</span>
+
+<span class="c1">#             img_filepath = os.path.join(output_image_folder, image_filename)</span>
+<span class="c1">#             txt_filepath = os.path.join(output_label_folder, txt_filename)</span>
+
+<span class="c1">#             cv2.imwrite(img_filepath, cv2.cvtColor(image_rgb, cv2.COLOR_RGB2BGR))</span>
+
+<span class="c1">#             with open(txt_filepath, &#39;w&#39;) as txt_file:</span>
+<span class="c1">#                 txt_file.write(&quot;\n&quot;.join(yolo_annotations))</span>
+
+<span class="c1">#             data.iloc[idx, data.columns.get_loc(&#39;Annotations&#39;)] = txt_filepath</span>
+
+<span class="c1">#     except Exception as e:</span>
+<span class="c1">#         print(f&quot;Error en la imagen {idx}: {e}&quot;)</span>
+
+<span class="c1"># # Dividir los datos en conjuntos de entrenamiento y validación</span>
+<span class="c1"># train_data, val_data = train_test_split(data, test_size=1-train_ratio, random_state=42)</span>
+
+<span class="c1"># # Procesar los datos de entrenamiento</span>
+<span class="c1"># for idx in tqdm(train_data.index, desc=&quot;Procesando entrenamiento&quot;):</span>
+<span class="c1">#     coor_detection_yolo(idx, flower_type=data[&quot;taxon_species_name&quot;][idx], </span>
+<span class="c1">#                         output_image_folder=&quot;train/images&quot;, output_label_folder=&quot;train/labels&quot;)</span>
+
+<span class="c1"># # Procesar los datos de validación</span>
+<span class="c1"># for idx in tqdm(val_data.index, desc=&quot;Procesando validación&quot;):</span>
+<span class="c1">#     coor_detection_yolo(idx, flower_type=data[&quot;taxon_species_name&quot;][idx], </span>
+<span class="c1">#                         output_image_folder=&quot;val/images&quot;, output_label_folder=&quot;val/labels&quot;)</span>
+
+<span class="c1"># print(f&quot;Anotaciones YOLO guardadas&quot;)</span>
+
+<span class="c1"># # Crear archivo YAML para YOLOv8</span>
+<span class="c1"># yaml_content = f&quot;&quot;&quot;</span>
+<span class="c1"># # Nombre del dataset</span>
+<span class="c1"># name: Flowers</span>
+
+<span class="c1"># # Número de clases</span>
+<span class="c1"># nc: 1</span>
+
+<span class="c1"># # Nombre de la clase</span>
+<span class="c1"># names: [&#39;Flower&#39;]</span>
+
+<span class="c1"># # Rutas de los archivos de imágenes y anotaciones</span>
+<span class="c1"># train: ./train/images</span>
+<span class="c1"># val: ./val/images</span>
+
+<span class="c1"># # Etiquetas de entrenamiento y validación</span>
+<span class="c1"># train_labels: ./train/labels</span>
+<span class="c1"># val_labels: ./val/labels</span>
+<span class="c1"># &quot;&quot;&quot;</span>
+
+<span class="c1"># with open(&quot;flowers_dataset.yaml&quot;, &#39;w&#39;) as yaml_file:</span>
+<span class="c1">#     yaml_file.write(yaml_content)</span>
+
+<span class="c1"># print(&quot;Archivo YAML creado: flowers_dataset.yaml&quot;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">template_url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
+
+<span class="c1"># Función para detectar contornos grandes en las áreas blancas y filtrar el cielo</span>
+<span class="k">def</span> <span class="nf">detect_large_white_areas</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">min_contour_area</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">hsv_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+    <span class="n">lower_white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">upper_white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">hsv_image</span><span class="p">,</span> <span class="n">lower_white</span><span class="p">,</span> <span class="n">upper_white</span><span class="p">)</span>
+    
+    <span class="c1"># Encontrar los contornos en la máscara blanca</span>
+    <span class="n">contours</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+    
+    <span class="c1"># Crear una nueva máscara para los contornos suficientemente grandes</span>
+    <span class="n">mask_large_areas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">valid_contours</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="n">min_contour_area</span><span class="p">:</span>
+            <span class="c1"># Filtrar por tamaño máximo del contorno (para eliminar grandes áreas como el cielo)</span>
+            <span class="k">if</span> <span class="n">max_contour_area</span> <span class="ow">and</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="n">max_contour_area</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="c1"># Filtrar contornos que estén demasiado cerca del borde superior (posible cielo)</span>
+            <span class="k">if</span> <span class="n">image_height</span><span class="p">:</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">image_height</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">:</span>  <span class="c1"># Si el contorno está en el 10% superior de la imagen, descartarlo</span>
+                    <span class="k">continue</span>
+            <span class="c1"># Guardar los contornos válidos</span>
+            <span class="n">valid_contours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="c1"># Dibujar solo los contornos grandes que pasen los filtros</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">drawContours</span><span class="p">(</span><span class="n">mask_large_areas</span><span class="p">,</span> <span class="p">[</span><span class="n">contour</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">FILLED</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">mask_large_areas</span><span class="p">,</span> <span class="n">valid_contours</span>
+
+<span class="c1"># Función para redimensionar la imagen a 600x600</span>
+<span class="k">def</span> <span class="nf">resize_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># Función para dibujar el recuadro del contorno detectado en la imagen original</span>
+<span class="k">def</span> <span class="nf">draw_contour_rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">contours</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Dibujar un recuadro alrededor del contorno más grande</span>
+        <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+<span class="c1"># Función para filtrar puntos clave dentro de los recuadros</span>
+<span class="k">def</span> <span class="nf">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">keypoints</span><span class="p">,</span> <span class="n">contours</span><span class="p">):</span>
+    <span class="n">filtered_keypoints</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+            <span class="n">rect_x</span><span class="p">,</span> <span class="n">rect_y</span><span class="p">,</span> <span class="n">rect_w</span><span class="p">,</span> <span class="n">rect_h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">rect_x</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">rect_x</span> <span class="o">+</span> <span class="n">rect_w</span> <span class="ow">and</span> <span class="n">rect_y</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">rect_y</span> <span class="o">+</span> <span class="n">rect_h</span><span class="p">:</span>
+                <span class="n">filtered_keypoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kp</span><span class="p">)</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">filtered_keypoints</span>
+
+<span class="c1"># Función para imprimir las métricas</span>
+<span class="k">def</span> <span class="nf">print_keypoint_metrics</span><span class="p">(</span><span class="n">keypoints</span><span class="p">,</span> <span class="n">image_size</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No se detectaron puntos clave.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="c1"># Tamaño promedio de los puntos clave</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
+    
+    <span class="c1"># Respuesta promedio de los puntos clave</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">response</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+    
+    <span class="c1"># Distribución angular (ángulo promedio)</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">angle</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+    
+    <span class="c1"># Distancia promedio entre los puntos clave</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">kp_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">])</span>
+        <span class="n">dist_matrix</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">pdist</span><span class="p">(</span><span class="n">kp_positions</span><span class="p">))</span>
+        <span class="n">avg_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">avg_dist</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Densidad de puntos clave (número de puntos clave por área)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">density</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">/</span> <span class="n">area</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tamaño promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_size</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Respuesta promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_response</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ángulo promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_angle</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distancia promedio entre puntos clave: </span><span class="si">{</span><span class="n">avg_dist</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad de puntos clave: </span><span class="si">{</span><span class="n">density</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">template_url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Cargar la imagen de la flor específica (la plantilla)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">template_url</span><span class="p">)</span>
+<span class="n">template_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">template_img</span><span class="p">)</span>
+
+<span class="c1"># Redimensionar la plantilla a 600x600</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">resize_image</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+
+<span class="c1"># Cargar la imagen donde buscar las flores</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[:</span><span class="mi">30</span><span class="p">]:</span>  <span class="c1"># Ajusta el nombre de la especie</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Cargar la imagen de comparación</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="c1"># Redimensionar la imagen de comparación a 600x600</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">resize_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        
+        <span class="c1"># Convertir ambas imágenes a escala de grises</span>
+        <span class="n">gray_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        <span class="n">gray_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+        <span class="c1"># Inicializar el detector ORB</span>
+        <span class="n">orb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ORB_create</span><span class="p">()</span>
+
+        <span class="c1"># Detectar puntos clave (keypoints) y descriptores en ambas imágenes</span>
+        <span class="n">kp1</span><span class="p">,</span> <span class="n">des1</span> <span class="o">=</span> <span class="n">orb</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">gray_template</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">kp2</span><span class="p">,</span> <span class="n">des2</span> <span class="o">=</span> <span class="n">orb</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">gray_image</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Detectar contornos grandes en las áreas blancas, filtrando el cielo</span>
+        <span class="n">image_height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">large_areas_template</span><span class="p">,</span> <span class="n">valid_contours_template</span> <span class="o">=</span> <span class="n">detect_large_white_areas</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="n">image_height</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+        <span class="n">large_areas_image</span><span class="p">,</span> <span class="n">valid_contours_image</span> <span class="o">=</span> <span class="n">detect_large_white_areas</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="n">image_height</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+
+        <span class="c1"># Filtrar los puntos clave que estén dentro de los contornos grandes</span>
+        <span class="n">filtered_kp1</span> <span class="o">=</span> <span class="n">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">kp1</span><span class="p">,</span> <span class="n">valid_contours_template</span><span class="p">)</span>
+        <span class="n">filtered_kp2</span> <span class="o">=</span> <span class="n">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">kp2</span><span class="p">,</span> <span class="n">valid_contours_image</span><span class="p">)</span>
+
+        <span class="c1"># Imprimir las métricas de los puntos clave de la plantilla</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Métricas de la Plantilla:&quot;</span><span class="p">)</span>
+        <span class="n">print_keypoint_metrics</span><span class="p">(</span><span class="n">filtered_kp1</span><span class="p">,</span> <span class="n">template</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="c1"># Imprimir las métricas de los puntos clave de la imagen de comparación</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Métricas de la Imagen de Comparación:&quot;</span><span class="p">)</span>
+        <span class="n">print_keypoint_metrics</span><span class="p">(</span><span class="n">filtered_kp2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="c1"># Usar BFMatcher para encontrar las mejores coincidencias, pero solo con puntos clave filtrados</span>
+        <span class="n">bf</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">BFMatcher</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">NORM_HAMMING</span><span class="p">,</span> <span class="n">crossCheck</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">orb</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">gray_template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">orb</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">gray_image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># Dibujar las coincidencias en las imágenes</span>
+        <span class="n">match_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawMatches</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">,</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">20</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Dibujar el contorno detectado en la imagen de comparación</span>
+        <span class="n">image_with_rectangle</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">image_with_rectangle</span> <span class="o">=</span> <span class="n">draw_contour_rectangle</span><span class="p">(</span><span class="n">image_with_rectangle</span><span class="p">,</span> <span class="n">valid_contours_image</span><span class="p">)</span>
+
+        <span class="c1"># Mostrar visualmente las superficies blancas grandes y los puntos clave filtrados</span>
+        <span class="n">template_with_keypoints</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawKeypoints</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">image_with_keypoints</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawKeypoints</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Mostrar las coincidencias visualmente y redimensionarlas a 600x600</span>
+        <span class="n">match_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">match_img</span><span class="p">,</span> <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">match_img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coincidencias entre la plantilla y la imagen de comparación&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image_with_rectangle</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagen Original con Contorno Detectado&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+</pre></div>
+</div>
+<img alt="_images/c86da72e34cad1c17a9efd3a1bd81d6768bf1b45897ad7aaa52050188d61c40e.png" src="_images/c86da72e34cad1c17a9efd3a1bd81d6768bf1b45897ad7aaa52050188d61c40e.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 71.12
+Respuesta promedio de los puntos clave: 0.0007
+Ángulo promedio de los puntos clave: 145.56
+Distancia promedio entre puntos clave: 80.23
+Densidad de puntos clave: 0.000139
+</pre></div>
+</div>
+<img alt="_images/bc47623206e680d4abc585ea4ec6520f3cb8ce1e8703f453764bddaa86e8b1a2.png" src="_images/bc47623206e680d4abc585ea4ec6520f3cb8ce1e8703f453764bddaa86e8b1a2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 63.91
+Respuesta promedio de los puntos clave: 0.0011
+Ángulo promedio de los puntos clave: 172.77
+Distancia promedio entre puntos clave: 45.62
+Densidad de puntos clave: 0.000433
+</pre></div>
+</div>
+<img alt="_images/0ab030033bb869f28dd5c57bf78fc57265d17c185e2289c1b16f7a442d894a64.png" src="_images/0ab030033bb869f28dd5c57bf78fc57265d17c185e2289c1b16f7a442d894a64.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 31.00
+Respuesta promedio de los puntos clave: 0.0005
+Ángulo promedio de los puntos clave: 343.43
+Distancia promedio entre puntos clave: 0.00
+Densidad de puntos clave: 0.000003
+</pre></div>
+</div>
+<img alt="_images/b2aa34ae77b4d36a4b6fe822620e9bbf45fad25ec23a54a7eee9f8e146071d13.png" src="_images/b2aa34ae77b4d36a4b6fe822620e9bbf45fad25ec23a54a7eee9f8e146071d13.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 47.00
+Respuesta promedio de los puntos clave: 0.0002
+Ángulo promedio de los puntos clave: 148.17
+Distancia promedio entre puntos clave: 20.18
+Densidad de puntos clave: 0.000022
+</pre></div>
+</div>
+<img alt="_images/de35cfb81edcc4b7630411107dccaa5bb9fe648ba3992a2a191820560d934d6c.png" src="_images/de35cfb81edcc4b7630411107dccaa5bb9fe648ba3992a2a191820560d934d6c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 59.05
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 167.82
+Distancia promedio entre puntos clave: 82.46
+Densidad de puntos clave: 0.000731
+</pre></div>
+</div>
+<img alt="_images/7e7d5bc70f1398b39b46aa8e0cae376d17c88e8681972fb1677cfb92a37ae28c.png" src="_images/7e7d5bc70f1398b39b46aa8e0cae376d17c88e8681972fb1677cfb92a37ae28c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 54.90
+Respuesta promedio de los puntos clave: 0.0001
+Ángulo promedio de los puntos clave: 161.16
+Distancia promedio entre puntos clave: 90.87
+Densidad de puntos clave: 0.001294
+</pre></div>
+</div>
+<img alt="_images/fadb0750600d965b8f817b8796f5aae386ef71227c9482e40ce2fab6268e6f02.png" src="_images/fadb0750600d965b8f817b8796f5aae386ef71227c9482e40ce2fab6268e6f02.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+</pre></div>
+</div>
+<img alt="_images/cd7bebe8a20a857ecf9b9a011cddbf510fe59a9f1bb251b113a2c4196c8db882.png" src="_images/cd7bebe8a20a857ecf9b9a011cddbf510fe59a9f1bb251b113a2c4196c8db882.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 58.71
+Respuesta promedio de los puntos clave: 0.0029
+Ángulo promedio de los puntos clave: 173.18
+Distancia promedio entre puntos clave: 90.13
+Densidad de puntos clave: 0.000361
+</pre></div>
+</div>
+<img alt="_images/303c251ba9c6ccd32de9bdf33fe14d63a551a66e86cdd13de47d634830d9acd0.png" src="_images/303c251ba9c6ccd32de9bdf33fe14d63a551a66e86cdd13de47d634830d9acd0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 63.82
+Respuesta promedio de los puntos clave: 0.0018
+Ángulo promedio de los puntos clave: 128.32
+Distancia promedio entre puntos clave: 42.54
+Densidad de puntos clave: 0.000094
+</pre></div>
+</div>
+<img alt="_images/43320a655ef1b2b45db71244dbb4da3e2c87944f3db48544b43cbf66f9c6b0f2.png" src="_images/43320a655ef1b2b45db71244dbb4da3e2c87944f3db48544b43cbf66f9c6b0f2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 65.23
+Respuesta promedio de los puntos clave: 0.0013
+Ángulo promedio de los puntos clave: 182.59
+Distancia promedio entre puntos clave: 90.86
+Densidad de puntos clave: 0.000581
+</pre></div>
+</div>
+<img alt="_images/9b28c69fb52cbf31aa0773b1a171b6c9bdf11cc66ccdfa596731a5a4c4291e30.png" src="_images/9b28c69fb52cbf31aa0773b1a171b6c9bdf11cc66ccdfa596731a5a4c4291e30.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 58.68
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 235.92
+Distancia promedio entre puntos clave: 55.51
+Densidad de puntos clave: 0.000175
+</pre></div>
+</div>
+<img alt="_images/0fe1c61e6072a4ed1628b33e16bfa9803f37d178337718060f61fd455d53354a.png" src="_images/0fe1c61e6072a4ed1628b33e16bfa9803f37d178337718060f61fd455d53354a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 61.10
+Respuesta promedio de los puntos clave: 0.0017
+Ángulo promedio de los puntos clave: 207.98
+Distancia promedio entre puntos clave: 60.37
+Densidad de puntos clave: 0.000086
+</pre></div>
+</div>
+<img alt="_images/659d51b2d639fe0fae689e490697c7d2896d828bb094af562287ac8bc1ca2291.png" src="_images/659d51b2d639fe0fae689e490697c7d2896d828bb094af562287ac8bc1ca2291.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 59.77
+Respuesta promedio de los puntos clave: 0.0029
+Ángulo promedio de los puntos clave: 154.81
+Distancia promedio entre puntos clave: 172.01
+Densidad de puntos clave: 0.000250
+</pre></div>
+</div>
+<img alt="_images/d1ee95d990008b6b32dc7d5128bfa4961c67fc485627d5d1586c0f9041ef7631.png" src="_images/d1ee95d990008b6b32dc7d5128bfa4961c67fc485627d5d1586c0f9041ef7631.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 70.37
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 214.37
+Distancia promedio entre puntos clave: 66.42
+Densidad de puntos clave: 0.000197
+</pre></div>
+</div>
+<img alt="_images/b7a322b4101b66d30f6b69f6c3c0f65b2f43b7e6df6604b272abc4309a5ad2ee.png" src="_images/b7a322b4101b66d30f6b69f6c3c0f65b2f43b7e6df6604b272abc4309a5ad2ee.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 49.13
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 214.39
+Distancia promedio entre puntos clave: 183.34
+Densidad de puntos clave: 0.000092
+</pre></div>
+</div>
+<img alt="_images/4e12077784d86283b2a1bc58de642c4f770cb2293a395ac4a44be39053675a8c.png" src="_images/4e12077784d86283b2a1bc58de642c4f770cb2293a395ac4a44be39053675a8c.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 63.57
+Respuesta promedio de los puntos clave: 0.0013
+Ángulo promedio de los puntos clave: 126.10
+Distancia promedio entre puntos clave: 36.54
+Densidad de puntos clave: 0.000161
+</pre></div>
+</div>
+<img alt="_images/d71173d737af77c1b469008f70149d0011fae0ac67313f3eb6a5ac220ac4d2f5.png" src="_images/d71173d737af77c1b469008f70149d0011fae0ac67313f3eb6a5ac220ac4d2f5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 74.84
+Respuesta promedio de los puntos clave: 0.0010
+Ángulo promedio de los puntos clave: 177.07
+Distancia promedio entre puntos clave: 144.03
+Densidad de puntos clave: 0.000150
+</pre></div>
+</div>
+<img alt="_images/729ab6769a74189f8a662b4c9b39548e04c54541bb7cc05d2be53660fef02bb4.png" src="_images/729ab6769a74189f8a662b4c9b39548e04c54541bb7cc05d2be53660fef02bb4.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 55.12
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 198.35
+Distancia promedio entre puntos clave: 133.92
+Densidad de puntos clave: 0.000683
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 71.42
+Respuesta promedio de los puntos clave: 0.0019
+Ángulo promedio de los puntos clave: 224.92
+Distancia promedio entre puntos clave: 59.81
+Densidad de puntos clave: 0.000217
+</pre></div>
+</div>
+<img alt="_images/b4c73b2da644c0318448c3764226eb293176e223a26848380b0466aefcaa7c30.png" src="_images/b4c73b2da644c0318448c3764226eb293176e223a26848380b0466aefcaa7c30.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">io</span> <span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span> <span class="nn">scipy.spatial.distance</span> <span class="kn">import</span> <span class="n">pdist</span><span class="p">,</span> <span class="n">squareform</span>
+
+<span class="c1"># Función para detectar contornos grandes en las áreas blancas y filtrar el cielo</span>
+<span class="k">def</span> <span class="nf">detect_large_white_areas</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">min_contour_area</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">hsv_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2HSV</span><span class="p">)</span>
+    <span class="n">lower_white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">upper_white</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">180</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">inRange</span><span class="p">(</span><span class="n">hsv_image</span><span class="p">,</span> <span class="n">lower_white</span><span class="p">,</span> <span class="n">upper_white</span><span class="p">)</span>
+    
+    <span class="c1"># Encontrar los contornos en la máscara blanca</span>
+    <span class="n">contours</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">findContours</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">RETR_EXTERNAL</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">CHAIN_APPROX_SIMPLE</span><span class="p">)</span>
+    
+    <span class="c1"># Crear una nueva máscara para los contornos suficientemente grandes</span>
+    <span class="n">mask_large_areas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mask</span><span class="p">)</span>
+    <span class="n">valid_contours</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">contourArea</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="n">min_contour_area</span><span class="p">:</span>
+            <span class="c1"># Filtrar por tamaño máximo del contorno (para eliminar grandes áreas como el cielo)</span>
+            <span class="k">if</span> <span class="n">max_contour_area</span> <span class="ow">and</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="n">max_contour_area</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="c1"># Filtrar contornos que estén demasiado cerca del borde superior (posible cielo)</span>
+            <span class="k">if</span> <span class="n">image_height</span><span class="p">:</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">image_height</span> <span class="o">*</span> <span class="mf">0.1</span><span class="p">:</span>  <span class="c1"># Si el contorno está en el 10% superior de la imagen, descartarlo</span>
+                    <span class="k">continue</span>
+            <span class="c1"># Guardar los contornos válidos</span>
+            <span class="n">valid_contours</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="c1"># Dibujar solo los contornos grandes que pasen los filtros</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">drawContours</span><span class="p">(</span><span class="n">mask_large_areas</span><span class="p">,</span> <span class="p">[</span><span class="n">contour</span><span class="p">],</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">cv2</span><span class="o">.</span><span class="n">FILLED</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">mask_large_areas</span><span class="p">,</span> <span class="n">valid_contours</span>
+
+<span class="c1"># Función para redimensionar la imagen a 600x600</span>
+<span class="k">def</span> <span class="nf">resize_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">)):</span>
+    <span class="k">return</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+
+<span class="c1"># Función para dibujar el recuadro del contorno detectado en la imagen original</span>
+<span class="k">def</span> <span class="nf">draw_contour_rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">contours</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">contours</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="c1"># Dibujar un recuadro alrededor del contorno más grande</span>
+        <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">w</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="n">h</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">image</span>
+
+<span class="c1"># Función para filtrar puntos clave dentro de los recuadros</span>
+<span class="k">def</span> <span class="nf">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">keypoints</span><span class="p">,</span> <span class="n">contours</span><span class="p">):</span>
+    <span class="n">filtered_keypoints</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">contour</span> <span class="ow">in</span> <span class="n">contours</span><span class="p">:</span>
+            <span class="n">rect_x</span><span class="p">,</span> <span class="n">rect_y</span><span class="p">,</span> <span class="n">rect_w</span><span class="p">,</span> <span class="n">rect_h</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">boundingRect</span><span class="p">(</span><span class="n">contour</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">rect_x</span> <span class="o">&lt;=</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">rect_x</span> <span class="o">+</span> <span class="n">rect_w</span> <span class="ow">and</span> <span class="n">rect_y</span> <span class="o">&lt;=</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">rect_y</span> <span class="o">+</span> <span class="n">rect_h</span><span class="p">:</span>
+                <span class="n">filtered_keypoints</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">kp</span><span class="p">)</span>
+                <span class="k">break</span>
+    <span class="k">return</span> <span class="n">filtered_keypoints</span>
+
+<span class="c1"># Función para imprimir las métricas</span>
+<span class="k">def</span> <span class="nf">print_keypoint_metrics</span><span class="p">(</span><span class="n">keypoints</span><span class="p">,</span> <span class="n">image_size</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No se detectaron puntos clave.&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+    
+    <span class="c1"># Tamaño promedio de los puntos clave</span>
+    <span class="n">sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">size</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sizes</span><span class="p">)</span>
+    
+    <span class="c1"># Respuesta promedio de los puntos clave</span>
+    <span class="n">responses</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">response</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+    
+    <span class="c1"># Distribución angular (ángulo promedio)</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="p">[</span><span class="n">kp</span><span class="o">.</span><span class="n">angle</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">]</span>
+    <span class="n">avg_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">angles</span><span class="p">)</span>
+    
+    <span class="c1"># Distancia promedio entre los puntos clave</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">kp_positions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">kp</span><span class="o">.</span><span class="n">pt</span> <span class="k">for</span> <span class="n">kp</span> <span class="ow">in</span> <span class="n">keypoints</span><span class="p">])</span>
+        <span class="n">dist_matrix</span> <span class="o">=</span> <span class="n">squareform</span><span class="p">(</span><span class="n">pdist</span><span class="p">(</span><span class="n">kp_positions</span><span class="p">))</span>
+        <span class="n">avg_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dist_matrix</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">avg_dist</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Densidad de puntos clave (número de puntos clave por área)</span>
+    <span class="n">area</span> <span class="o">=</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">image_size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">density</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">keypoints</span><span class="p">)</span> <span class="o">/</span> <span class="n">area</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tamaño promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_size</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Respuesta promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_response</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ángulo promedio de los puntos clave: </span><span class="si">{</span><span class="n">avg_angle</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Distancia promedio entre puntos clave: </span><span class="si">{</span><span class="n">avg_dist</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Densidad de puntos clave: </span><span class="si">{</span><span class="n">density</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">template_url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="mi">13</span><span class="p">]</span>
+
+<span class="c1"># Cargar la imagen de la flor específica (la plantilla)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">template_url</span><span class="p">)</span>
+<span class="n">template_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">template_img</span><span class="p">)</span>
+
+<span class="c1"># Redimensionar la plantilla a 600x600</span>
+<span class="n">template</span> <span class="o">=</span> <span class="n">resize_image</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
+
+<span class="c1"># Cargar la imagen donde buscar las flores</span>
+<span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;taxon_species_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plumeria alba&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">60</span><span class="p">]:</span>  <span class="c1"># Ajusta el nombre de la especie</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="c1"># Cargar la imagen de comparación</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image_url&quot;</span><span class="p">][</span><span class="n">idx</span><span class="p">]</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="c1"># Redimensionar la imagen de comparación a 600x600</span>
+        <span class="n">image</span> <span class="o">=</span> <span class="n">resize_image</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+        
+        <span class="c1"># Convertir ambas imágenes a escala de grises</span>
+        <span class="n">gray_template</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+        <span class="n">gray_image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2GRAY</span><span class="p">)</span>
+
+        <span class="c1"># Inicializar el detector ORB</span>
+        <span class="n">orb</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">ORB_create</span><span class="p">()</span>
+
+        <span class="c1"># Detectar puntos clave (keypoints) y descriptores en ambas imágenes</span>
+        <span class="n">kp1</span><span class="p">,</span> <span class="n">des1</span> <span class="o">=</span> <span class="n">orb</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">gray_template</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">kp2</span><span class="p">,</span> <span class="n">des2</span> <span class="o">=</span> <span class="n">orb</span><span class="o">.</span><span class="n">detectAndCompute</span><span class="p">(</span><span class="n">gray_image</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+
+        <span class="c1"># Detectar contornos grandes en las áreas blancas, filtrando el cielo</span>
+        <span class="n">image_height</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">large_areas_template</span><span class="p">,</span> <span class="n">valid_contours_template</span> <span class="o">=</span> <span class="n">detect_large_white_areas</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="n">image_height</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+        <span class="n">large_areas_image</span><span class="p">,</span> <span class="n">valid_contours_image</span> <span class="o">=</span> <span class="n">detect_large_white_areas</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">image_height</span><span class="o">=</span><span class="n">image_height</span><span class="p">,</span> <span class="n">max_contour_area</span><span class="o">=</span><span class="mi">50000</span><span class="p">)</span>
+
+        <span class="c1"># Filtrar los puntos clave que estén dentro de los contornos grandes</span>
+        <span class="n">filtered_kp1</span> <span class="o">=</span> <span class="n">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">kp1</span><span class="p">,</span> <span class="n">valid_contours_template</span><span class="p">)</span>
+        <span class="n">filtered_kp2</span> <span class="o">=</span> <span class="n">filter_keypoints_in_rectangles</span><span class="p">(</span><span class="n">kp2</span><span class="p">,</span> <span class="n">valid_contours_image</span><span class="p">)</span>
+
+        <span class="c1"># Imprimir las métricas de los puntos clave de la plantilla</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Métricas de la Plantilla:&quot;</span><span class="p">)</span>
+        <span class="n">print_keypoint_metrics</span><span class="p">(</span><span class="n">filtered_kp1</span><span class="p">,</span> <span class="n">template</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="c1"># Imprimir las métricas de los puntos clave de la imagen de comparación</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Métricas de la Imagen de Comparación:&quot;</span><span class="p">)</span>
+        <span class="n">print_keypoint_metrics</span><span class="p">(</span><span class="n">filtered_kp2</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+        <span class="c1"># Usar BFMatcher para encontrar las mejores coincidencias, pero solo con puntos clave filtrados</span>
+        <span class="n">bf</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">BFMatcher</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">NORM_HAMMING</span><span class="p">,</span> <span class="n">crossCheck</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">matches</span> <span class="o">=</span> <span class="n">bf</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">orb</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">gray_template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">orb</span><span class="o">.</span><span class="n">compute</span><span class="p">(</span><span class="n">gray_image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+
+        <span class="c1"># Dibujar las coincidencias en las imágenes</span>
+        <span class="n">match_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawMatches</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">,</span> <span class="n">matches</span><span class="p">[:</span><span class="mi">30</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># Dibujar el contorno detectado en la imagen de comparación</span>
+        <span class="n">image_with_rectangle</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">image_with_rectangle</span> <span class="o">=</span> <span class="n">draw_contour_rectangle</span><span class="p">(</span><span class="n">image_with_rectangle</span><span class="p">,</span> <span class="n">valid_contours_image</span><span class="p">)</span>
+
+        <span class="c1"># Mostrar visualmente las superficies blancas grandes y los puntos clave filtrados</span>
+        <span class="n">template_with_keypoints</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawKeypoints</span><span class="p">(</span><span class="n">template</span><span class="p">,</span> <span class="n">filtered_kp1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">image_with_keypoints</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">drawKeypoints</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">filtered_kp2</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">flags</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+        <span class="c1"># Mostrar las coincidencias visualmente y redimensionarlas a 600x600</span>
+        <span class="n">match_img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">match_img</span><span class="p">,</span> <span class="p">(</span><span class="mi">600</span><span class="p">,</span> <span class="mi">600</span><span class="p">))</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">match_img</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Coincidencias entre la plantilla y la imagen de comparación&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">image_with_rectangle</span><span class="p">,</span> <span class="n">cv2</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Imagen Original con Contorno Detectado&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 67.14
+Respuesta promedio de los puntos clave: 0.0015
+Ángulo promedio de los puntos clave: 188.28
+Distancia promedio entre puntos clave: 57.65
+Densidad de puntos clave: 0.000367
+</pre></div>
+</div>
+<img alt="_images/39469038c4423b4a7481d97609b53354ef27a0c7336f858dfec9747d66f7b387.png" src="_images/39469038c4423b4a7481d97609b53354ef27a0c7336f858dfec9747d66f7b387.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 63.19
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 184.23
+Distancia promedio entre puntos clave: 164.63
+Densidad de puntos clave: 0.000436
+</pre></div>
+</div>
+<img alt="_images/8c03d5ce46aa96e5cdfe7e091ba9fdc2ed691c08baf5114df7810a493ba0717a.png" src="_images/8c03d5ce46aa96e5cdfe7e091ba9fdc2ed691c08baf5114df7810a493ba0717a.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 61.87
+Respuesta promedio de los puntos clave: 0.0008
+Ángulo promedio de los puntos clave: 178.28
+Distancia promedio entre puntos clave: 110.09
+Densidad de puntos clave: 0.000469
+</pre></div>
+</div>
+<img alt="_images/dcec0e4deb4e4fc9687b4486bc37f7f86efe4d61c80bfd2fb72f046931082752.png" src="_images/dcec0e4deb4e4fc9687b4486bc37f7f86efe4d61c80bfd2fb72f046931082752.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 38.96
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 208.82
+Distancia promedio entre puntos clave: 24.74
+Densidad de puntos clave: 0.000119
+</pre></div>
+</div>
+<img alt="_images/fba975c9e6015f2d8b5b44f9e38bb90844238544a73526de8863b5a0fc0ba7de.png" src="_images/fba975c9e6015f2d8b5b44f9e38bb90844238544a73526de8863b5a0fc0ba7de.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 57.95
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 160.07
+Distancia promedio entre puntos clave: 81.27
+Densidad de puntos clave: 0.000506
+</pre></div>
+</div>
+<img alt="_images/f29c53ac11a3cf5dbf702ecb93034535f729eebc41c7afbbe1a583ffc1011a01.png" src="_images/f29c53ac11a3cf5dbf702ecb93034535f729eebc41c7afbbe1a583ffc1011a01.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 53.57
+Respuesta promedio de los puntos clave: 0.0014
+Ángulo promedio de los puntos clave: 129.13
+Distancia promedio entre puntos clave: 74.45
+Densidad de puntos clave: 0.000211
+</pre></div>
+</div>
+<img alt="_images/ee9a9a4a062b7285909c3ba9dfc0b530cc067f2467e4bf0de026d9ac53ff6770.png" src="_images/ee9a9a4a062b7285909c3ba9dfc0b530cc067f2467e4bf0de026d9ac53ff6770.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 53.75
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 257.52
+Distancia promedio entre puntos clave: 67.90
+Densidad de puntos clave: 0.000028
+</pre></div>
+</div>
+<img alt="_images/2438f4ddd318d44717f60909fb93763bde20b1f1b2db250b29df865a7b40f757.png" src="_images/2438f4ddd318d44717f60909fb93763bde20b1f1b2db250b29df865a7b40f757.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 68.94
+Respuesta promedio de los puntos clave: 0.0007
+Ángulo promedio de los puntos clave: 146.73
+Distancia promedio entre puntos clave: 83.27
+Densidad de puntos clave: 0.000406
+</pre></div>
+</div>
+<img alt="_images/8ac42049301837031fbe79f431098463845d617e20c679ddf76dbaff9228f792.png" src="_images/8ac42049301837031fbe79f431098463845d617e20c679ddf76dbaff9228f792.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 77.58
+Respuesta promedio de los puntos clave: 0.0011
+Ángulo promedio de los puntos clave: 197.01
+Distancia promedio entre puntos clave: 96.56
+Densidad de puntos clave: 0.000297
+</pre></div>
+</div>
+<img alt="_images/afe6895b47388dba6069db806d7b1fea74b7c022af530b633fd57ded76115335.png" src="_images/afe6895b47388dba6069db806d7b1fea74b7c022af530b633fd57ded76115335.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 60.22
+Respuesta promedio de los puntos clave: 0.0004
+Ángulo promedio de los puntos clave: 176.70
+Distancia promedio entre puntos clave: 144.90
+Densidad de puntos clave: 0.000486
+</pre></div>
+</div>
+<img alt="_images/1b84b3d8dd48013ce9a194707c46b734eefbcab7b51ed76d7d56ede1f2b6b811.png" src="_images/1b84b3d8dd48013ce9a194707c46b734eefbcab7b51ed76d7d56ede1f2b6b811.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 62.14
+Respuesta promedio de los puntos clave: 0.0009
+Ángulo promedio de los puntos clave: 145.60
+Distancia promedio entre puntos clave: 172.85
+Densidad de puntos clave: 0.000133
+</pre></div>
+</div>
+<img alt="_images/675a7b6a291c598b3964784f76ab09d59d92117782129cc4f45952f4880af00b.png" src="_images/675a7b6a291c598b3964784f76ab09d59d92117782129cc4f45952f4880af00b.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 49.04
+Respuesta promedio de los puntos clave: 0.0002
+Ángulo promedio de los puntos clave: 271.19
+Distancia promedio entre puntos clave: 50.16
+Densidad de puntos clave: 0.000153
+</pre></div>
+</div>
+<img alt="_images/3a2e8c31b7a52c34dba9df0c9a8954f82e1eabbf38acd9dc16226bc2a5ae2f99.png" src="_images/3a2e8c31b7a52c34dba9df0c9a8954f82e1eabbf38acd9dc16226bc2a5ae2f99.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 41.60
+Respuesta promedio de los puntos clave: 0.0008
+Ángulo promedio de los puntos clave: 268.83
+Distancia promedio entre puntos clave: 0.84
+Densidad de puntos clave: 0.000011
+</pre></div>
+</div>
+<img alt="_images/f0eb86971bc437ae1c150f3e79a68cf8dab762725a942276b2e3ff8fe25efae5.png" src="_images/f0eb86971bc437ae1c150f3e79a68cf8dab762725a942276b2e3ff8fe25efae5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 56.88
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 231.35
+Distancia promedio entre puntos clave: 211.19
+Densidad de puntos clave: 0.000922
+</pre></div>
+</div>
+<img alt="_images/0bd0859fc3f2d9f6ada4c7f9671168fa8504bc00fe34dc095e34f0eb62175ed2.png" src="_images/0bd0859fc3f2d9f6ada4c7f9671168fa8504bc00fe34dc095e34f0eb62175ed2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 62.75
+Respuesta promedio de los puntos clave: 0.0011
+Ángulo promedio de los puntos clave: 143.11
+Distancia promedio entre puntos clave: 142.76
+Densidad de puntos clave: 0.000311
+</pre></div>
+</div>
+<img alt="_images/ca0dde1b446590cfec27dd681cd8bfc160c02540b9e51f26fc711b4af48d5543.png" src="_images/ca0dde1b446590cfec27dd681cd8bfc160c02540b9e51f26fc711b4af48d5543.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 54.10
+Respuesta promedio de los puntos clave: 0.0005
+Ángulo promedio de los puntos clave: 196.35
+Distancia promedio entre puntos clave: 103.87
+Densidad de puntos clave: 0.000322
+</pre></div>
+</div>
+<img alt="_images/520654767d76c457484f3411141d0590757200dc6c671844c7177ea1cb2c8dd2.png" src="_images/520654767d76c457484f3411141d0590757200dc6c671844c7177ea1cb2c8dd2.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 56.30
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 146.06
+Distancia promedio entre puntos clave: 162.77
+Densidad de puntos clave: 0.000197
+</pre></div>
+</div>
+<img alt="_images/bba3275e91b7c811689edf5a45bef8f076a9905d790aff9f716ab8cef03227f9.png" src="_images/bba3275e91b7c811689edf5a45bef8f076a9905d790aff9f716ab8cef03227f9.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 61.78
+Respuesta promedio de los puntos clave: 0.0003
+Ángulo promedio de los puntos clave: 213.90
+Distancia promedio entre puntos clave: 126.73
+Densidad de puntos clave: 0.000386
+</pre></div>
+</div>
+<img alt="_images/76b62fe186dc6d651b799106133652dd61369d8375da868ecd4069e77187c7fe.png" src="_images/76b62fe186dc6d651b799106133652dd61369d8375da868ecd4069e77187c7fe.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 56.44
+Respuesta promedio de los puntos clave: 0.0007
+Ángulo promedio de los puntos clave: 183.77
+Distancia promedio entre puntos clave: 81.38
+Densidad de puntos clave: 0.000411
+</pre></div>
+</div>
+<img alt="_images/be594d666066fe1cc748b6113689575e4f19dc939e5f7c2482474acf7acd1980.png" src="_images/be594d666066fe1cc748b6113689575e4f19dc939e5f7c2482474acf7acd1980.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 71.95
+Respuesta promedio de los puntos clave: 0.0008
+Ángulo promedio de los puntos clave: 221.70
+Distancia promedio entre puntos clave: 27.07
+Densidad de puntos clave: 0.000111
+</pre></div>
+</div>
+<img alt="_images/08dfa4ef842b6be81954a19f93a3a8694d41cb6c15bed32058c131471615d2e6.png" src="_images/08dfa4ef842b6be81954a19f93a3a8694d41cb6c15bed32058c131471615d2e6.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 50.30
+Respuesta promedio de los puntos clave: 0.0018
+Ángulo promedio de los puntos clave: 189.55
+Distancia promedio entre puntos clave: 116.45
+Densidad de puntos clave: 0.000356
+</pre></div>
+</div>
+<img alt="_images/089bc548a047131d474c0fc535d76059a70f9386206f2dc937abf0fb48b65224.png" src="_images/089bc548a047131d474c0fc535d76059a70f9386206f2dc937abf0fb48b65224.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+No se detectaron puntos clave.
+Métricas de la Plantilla:
+Tamaño promedio de los puntos clave: 56.76
+Respuesta promedio de los puntos clave: 0.0006
+Ángulo promedio de los puntos clave: 137.31
+Distancia promedio entre puntos clave: 158.76
+Densidad de puntos clave: 0.000642
+
+Métricas de la Imagen de Comparación:
+Tamaño promedio de los puntos clave: 67.53
+Respuesta promedio de los puntos clave: 0.0024
+Ángulo promedio de los puntos clave: 130.97
+Distancia promedio entre puntos clave: 140.66
+Densidad de puntos clave: 0.000086
+</pre></div>
+</div>
+<img alt="_images/0894fbe9b443af2134b9da258d0714dea900605de122a47fbd9bc93539d99e81.png" src="_images/0894fbe9b443af2134b9da258d0714dea900605de122a47fbd9bc93539d99e81.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="uninorte-flower-detection-pytorch.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Pytorch Models</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Juan Esteban Albis
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
